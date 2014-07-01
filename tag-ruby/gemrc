@@ -1,0 +1,2 @@
+# disable installing ri and rdoc documentation by default
+gem: --no-document

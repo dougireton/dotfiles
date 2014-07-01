@@ -1,0 +1,8 @@
+*~
+.DS_Store
+*.swp
+tags
+*.vmdk
+.vagrant*
+.bundle
+packer_cache
