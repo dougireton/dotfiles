@@ -49,22 +49,10 @@ cask install rdio
 cask install flux
 cask install kindle
 cask install silverlight
-cask install screenhero
-cask install google-earth
-cask install skype
-
-# add ability to install Cask betas
-tap caskroom/versions
-cask install iterm2-beta
 
 # packer
 tap homebrew/binary
 install packer
-
-# docker
-install docker
-tap fnichol/dvm
-install dvm
 
 # Remove outdated versions from the cellar
 cleanup

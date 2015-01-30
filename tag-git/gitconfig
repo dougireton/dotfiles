@@ -1,8 +1,8 @@
 [credential]
   helper = osxkeychain
 [user]
-  name = Ireton, Doug
-  email = doug.ireton@nordstrom.com
+	name = Doug Ireton
+	email = doug.ireton@nordstrom.com
 [core]
   excludesfile = ~/.gitignore_global
 

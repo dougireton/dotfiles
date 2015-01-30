@@ -6,3 +6,4 @@ tags
 .vagrant*
 .bundle
 packer_cache
+/coverage/**

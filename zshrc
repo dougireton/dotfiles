@@ -19,6 +19,8 @@ alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias proxy=". ~/bin/proxy.sh"
 alias noproxy=". ~/bin/noproxy.sh"
 
+alias kitten=kitchen
+
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
 
@@ -45,6 +47,8 @@ DISABLE_CORRECTION="true"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+eval "$(chef shell-init zsh)"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -60,8 +64,6 @@ git
 history
 jira
 jsontools
-knife
-rbenv
 ruby
 tmux
 tmuxinator
@@ -78,11 +80,18 @@ if [[ -r /usr/local/share/zsh/site-functions/_aws ]]; then
 fi
 
 # set path (PATH) here as per Mislav's comments in https://github.com/sorin-ionescu/prezto/issues/381
-path=(/usr/local/bin $path)
+path=(~/bin /usr/local/bin /usr/local/sbin $path)
 
+# Packer
 [[ -x ~/Applications/packer/packer ]] && path+=~/Applications/packer
+
+# Our Ruby code
 [[ -d ~/chef/infeng/code/ruby ]] && path+=~/chef/infeng/code/ruby
-path+=~/bin
+
+# Add go tools path
+# [[ -d /usr/local/opt/go/libexec/bin ]] && path+=/usr/local/opt/go/libexec/bin
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # remove duplicate entries
 typeset -U path
